@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/amd-base-api-compiled.js" />
+        <item url="file://$PROJECT_DIR$/ng-base-api-compiled.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/amd-base-api-compiled.js" />
+      <root url="file://$PROJECT_DIR$/ng-base-api-compiled.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>
