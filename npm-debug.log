@@ -1,0 +1,101 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.33
+4 verbose node symlink C:\Program Files\nodejs\\node.exe
+5 verbose publish [ '.' ]
+6 verbose cache add [ '.', null ]
+7 verbose cache add name=undefined spec="." args=[".",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: '.',
+8 verbose parsed url   path: '.',
+8 verbose parsed url   href: '.' }
+9 silly lockFile 3a52ce78- .
+10 verbose lock . C:\Users\rahulp\AppData\Roaming\npm-cache\3a52ce78-.lock
+11 verbose tar pack [ 'C:\\Users\\rahulp\\AppData\\Roaming\\npm-cache\\Base-Api\\0.0.1\\package.tgz',
+11 verbose tar pack   '.' ]
+12 verbose tarball C:\Users\rahulp\AppData\Roaming\npm-cache\Base-Api\0.0.1\package.tgz
+13 verbose folder .
+14 info prepublish Base-Api@0.0.1
+15 silly lockFile 1f1177db-tar tar://.
+16 verbose lock tar://. C:\Users\rahulp\AppData\Roaming\npm-cache\1f1177db-tar.lock
+17 silly lockFile 56e78726-cache-Base-Api-0-0-1-package-tgz tar://C:\Users\rahulp\AppData\Roaming\npm-cache\Base-Api\0.0.1\package.tgz
+18 verbose lock tar://C:\Users\rahulp\AppData\Roaming\npm-cache\Base-Api\0.0.1\package.tgz C:\Users\rahulp\AppData\Roaming\npm-cache\56e78726-cache-Base-Api-0-0-1-package-tgz.lock
+19 silly lockFile 1f1177db-tar tar://.
+20 silly lockFile 1f1177db-tar tar://.
+21 silly lockFile 56e78726-cache-Base-Api-0-0-1-package-tgz tar://C:\Users\rahulp\AppData\Roaming\npm-cache\Base-Api\0.0.1\package.tgz
+22 silly lockFile 56e78726-cache-Base-Api-0-0-1-package-tgz tar://C:\Users\rahulp\AppData\Roaming\npm-cache\Base-Api\0.0.1\package.tgz
+23 silly lockFile c72030a3-npm-cache-Base-Api-0-0-1-package C:\Users\rahulp\AppData\Roaming\npm-cache\Base-Api\0.0.1\package
+24 verbose lock C:\Users\rahulp\AppData\Roaming\npm-cache\Base-Api\0.0.1\package C:\Users\rahulp\AppData\Roaming\npm-cache\c72030a3-npm-cache-Base-Api-0-0-1-package.lock
+25 silly lockFile c72030a3-npm-cache-Base-Api-0-0-1-package C:\Users\rahulp\AppData\Roaming\npm-cache\Base-Api\0.0.1\package
+26 silly lockFile c72030a3-npm-cache-Base-Api-0-0-1-package C:\Users\rahulp\AppData\Roaming\npm-cache\Base-Api\0.0.1\package
+27 silly lockFile 3a52ce78- .
+28 silly lockFile 3a52ce78- .
+29 silly publish { name: 'Base-Api',
+29 silly publish   version: '0.0.1',
+29 silly publish   description: 'Base Api module',
+29 silly publish   repository: { type: 'git', url: 'https://github.com/rahpal/Base-Api' },
+29 silly publish   keywords: [ 'baseapi, api, base-api' ],
+29 silly publish   author: { name: 'Rahul Pal' },
+29 silly publish   license: 'MIT',
+29 silly publish   dependencies: {},
+29 silly publish   gitHead: '03afa8df15af0922044590ce1a67a858cea7ba9d',
+29 silly publish   bugs: { url: 'https://github.com/rahpal/Base-Api/issues' },
+29 silly publish   readme: 'ERROR: No README data found!',
+29 silly publish   homepage: 'https://github.com/rahpal/Base-Api',
+29 silly publish   _id: 'Base-Api@0.0.1',
+29 silly publish   scripts: {},
+29 silly publish   _shasum: 'b635e88dd88be1179ea3dc91f5e739eae94a96ef',
+29 silly publish   _from: '.' }
+30 verbose request where is /Base-Api
+31 verbose request registry https://registry.npmjs.org/
+32 verbose request id 9574982ad50eab5f
+33 verbose url raw /Base-Api
+34 verbose url resolving [ 'https://registry.npmjs.org/', './Base-Api' ]
+35 verbose url resolved https://registry.npmjs.org/Base-Api
+36 verbose request where is https://registry.npmjs.org/Base-Api
+37 info trying registry request attempt 1 at 13:36:49
+38 http PUT https://registry.npmjs.org/Base-Api
+39 http 400 https://registry.npmjs.org/Base-Api
+40 verbose headers { 'content-type': 'application/json',
+40 verbose headers   'cache-control': 'max-age=60',
+40 verbose headers   'content-length': '54',
+40 verbose headers   'accept-ranges': 'bytes',
+40 verbose headers   date: 'Mon, 13 Jul 2015 08:06:53 GMT',
+40 verbose headers   via: '1.1 varnish',
+40 verbose headers   connection: 'keep-alive',
+40 verbose headers   'x-served-by': 'cache-sin6924-SIN',
+40 verbose headers   'x-cache': 'MISS',
+40 verbose headers   'x-cache-hits': '0',
+40 verbose headers   'x-timer': 'S1436774811.248509,VS0,VE2029' }
+41 error publish Failed PUT 400
+42 error Error: name can no longer contain capital letters : Base-Api
+42 error     at RegClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:308:14)
+42 error     at Request._callback (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:246:65)
+42 error     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:236:22)
+42 error     at Request.emit (events.js:98:17)
+42 error     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1142:14)
+42 error     at Request.emit (events.js:117:20)
+42 error     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1096:12)
+42 error     at IncomingMessage.emit (events.js:117:20)
+42 error     at _stream_readable.js:943:16
+42 error     at process._tickCallback (node.js:419:13)
+43 error If you need help, you may report this *entire* log,
+43 error including the npm and node versions, at:
+43 error     <http://github.com/npm/npm/issues>
+44 error System Windows_NT 6.1.7601
+45 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+46 error cwd C:\Users\rahulp\Documents\GitHub\Base-Api
+47 error node -v v0.10.33
+48 error npm -v 1.4.28
+49 verbose exit [ 1, true ]

@@ -1,0 +1,13 @@
+{
+  "name": "base-api",
+  "version": "0.0.1",
+  "description": "Base Api module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rahpal/Base-Api"
+  },
+  "keywords": ["baseapi, api, base-api"],
+  "author": "Rahul Pal",
+  "license": "MIT",
+  "dependencies": {}
+}
