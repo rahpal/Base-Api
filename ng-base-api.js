@@ -6,59 +6,74 @@
 
 "use strict";
 
-angular.module('AngularJS.BaseApi', [])
-.factory('BaseApiFactory', ['$http', '$q', function ($http, $q) {
+((angular, factory) => {
 
-    let api = {},
-        _httpAjax = (httpMethod, webApiMethod, id, query, postData, enableCache) =>  {
+    if (typeof define === 'function' && define.amd) {
+        define(['angular'], function (angular) {
+            return factory(angular);
+        });
+    } else {
+        return factory(angular);
+    }
 
-            let deferred = $q.defer(),
-                url,
-                requestPayload;
+})(angular || null, (angular) => {
 
-            if (!!query && !query.startsWith('?')) {
-                query = '?' + query;
-            }
+    angular.module('AngularJS.BaseApi', [])
+        .factory('BaseApiFactory', ['$http', '$q', function ($http, $q) {
 
-            url = webApiUrl + "api/" + webApiMethod + (!!id ? "/" + id : "") + (query || "");
+            let api = {},
+                _httpAjax = (httpMethod, webApiMethod, id, query, postData, enableCache) =>  {
 
-            requestPayload = {
-                cache: !!enableCache,
-                method: httpMethod,
-                url: url,
-                data: !!postData ? JSON.stringify(postData) : null,
-                headers: {
-                    'Content-Type': 'application/json'
-                }
+                    let deferred = $q.defer(),
+                        url,
+                        requestPayload;
+
+                    if (!!query && !query.startsWith('?')) {
+                        query = '?' + query;
+                    }
+
+                    url = webApiUrl + "api/" + webApiMethod + (!!id ? "/" + id : "") + (query || "");
+
+                    requestPayload = {
+                        cache: !!enableCache,
+                        method: httpMethod,
+                        url: url,
+                        data: !!postData ? JSON.stringify(postData) : null,
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    };
+
+                    $http(requestPayload)
+                        .success(function (data, status, headers, config) {
+                            deferred.resolve(data);
+                        }).error(function (data, status, headers, config) {
+                            // do not reject the defer since we are redirecting the user to error page.
+                            deferred.reject(data);
+                        });
+
+                    return deferred.promise;
+
+                };
+
+            api.get = (method, id, query, enableCache = false) => {
+                return _httpAjax('GET', method, id, query, null, enableCache);
             };
 
-            $http(requestPayload)
-                .success(function (data, status, headers, config) {
-                    deferred.resolve(data);
-                }).error(function (data, status, headers, config) {
-                    // do not reject the defer since we are redirecting the user to error page.
-                    deferred.reject(data);
-                });
+            api.post = (method, id, query, postData, enableCache = false) => {
+                return _httpAjax('POST', method, id, query, postData, enableCache);
+            };
 
-            return deferred.promise;
+            api.put = (method, id, query, postData, enableCache = false) => {
+                return _httpAjax('PUT', method, id, query, postData, enableCache);
+            };
 
-        };
+            api.delete = (method, id, query, enableCache = false)=> {
+                return _httpAjax('DELETE', method, id, query, null, enableCache);
+            };
 
-        api.get = (method, id, query, enableCache = false) => {
-            return _httpAjax('GET', method, id, query, null, enableCache);
-        };
+            return api;
+        }]);
 
-        api.post = (method, id, query, postData, enableCache = false) => {
-            return _httpAjax('POST', method, id, query, postData, enableCache);
-        };
+});
 
-        api.put = (method, id, query, postData, enableCache = false) => {
-            return _httpAjax('PUT', method, id, query, postData, enableCache);
-        };
-
-        api.delete = (method, id, query, enableCache = false)=> {
-            return _httpAjax('DELETE', method, id, query, null, enableCache);
-        };
-
-        return api;
-}]);
