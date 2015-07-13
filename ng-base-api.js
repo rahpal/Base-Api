@@ -15,7 +15,6 @@
     } else {
         return factory(angular);
     }
-
 })(angular || null, (angular) => {
 
     angular.module('AngularJS.BaseApi', [])

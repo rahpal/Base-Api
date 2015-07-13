@@ -6,9 +6,9 @@
 
 'use strict';
 
-(($, factory) => {
+((factory) => {
 
-    if(!requirejs && !requirejs.config) return; // Exit from here
+    if(!requirejs && !requirejs.config) throw new Error("RequireJS is not loaded correctly...");; // Exit from here
 
     /* RequireJS Configuartion settings */
     requirejs.config({
@@ -19,11 +19,10 @@
 
     if (typeof define === 'function' && define.amd) {
         factory();
-    }else{
+    } else {
         throw new Error("RequireJS is not loaded correctly...");
     }
-})($, ()=>{
-
+})(()=>{
     define(['jquery'], ($) => {
 
         let api = {},
@@ -79,6 +78,5 @@
 
         return api;
 
-    })
-
+    });
 });

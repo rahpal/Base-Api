@@ -1,0 +1,15 @@
+{
+  "name": "base-api",
+  "version": "0.0.1",
+  "description": "Base API module for AJAX calls written in JS (compliance with ECMA2015 and ECMA 5)",
+  "keywords": [
+    "baseapi",
+    "base-api",
+    "api"
+  ],
+  "authors": [
+    "Rahul Pal"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/rahpal/Base-Api"
+}
